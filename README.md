@@ -1,4 +1,4 @@
-# Finance X
+# Finance X - Interest rate models for the Icelandic bond market
 Final project for the course Finance X 2019
 
 Completed over the course of three weeks: 29/04/2019 - 22/05/2019
