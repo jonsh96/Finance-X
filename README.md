@@ -1,5 +1,5 @@
 # Finance X 
-## Interest rate models for the Icelandic bond market
+## Interest rate models for the Icelandic bond market (Final grade 95%)
 
 Final project for the course Finance X 2019
 
