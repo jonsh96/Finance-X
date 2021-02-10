@@ -10,9 +10,9 @@
 % timed out after 30 seconds. Set options.Timeout to a higher value."
 % Running the code again usually fixes these  problems.
  
-% WEB SCRAPING DATA FROM BONDS.IS
-IndexedUrl = 'http://www.bonds.is/api/market/LoadIndexed?lang=en&nonIndexed=false&nOrderbookId=-1';
-NonIndexedUrl = 'http://www.bonds.is/api/market/LoadIndexed?lang=en&nonIndexed=true&nOrderbookId=-1';
+% WEB SCRAPING DATA FROM BONDS.IS (NOW LANAMAL.IS)
+IndexedUrl = 'http://www.lanamal.is/api/market/LoadIndexed?lang=en&nonIndexed=false&nOrderbookId=-1';
+NonIndexedUrl = 'http://www.lanamal.is/api/market/LoadIndexed?lang=en&nonIndexed=true&nOrderbookId=-1';
 IndexedBonds = webread(IndexedUrl);
 
 NonIndexedBonds = webread(NonIndexedUrl);
@@ -20,7 +20,7 @@ options = weboptions('Timeout', 30);
 
 % CREATING A PORTFOLIO OF INDEXED BONDS
 for i = 1:length(IndexedBonds)
-    url = "http://www.bonds.is/api/market/LoadIndexedDetail?orderbookId=" + IndexedBonds(i).orderbookId + "&lang=en";
+    url = "http://www.lanamal.is/api/market/LoadIndexedDetail?orderbookId=" + IndexedBonds(i).orderbookId + "&lang=en";
     % Creating a bond object (see bond.m) to sort relevant information from
     % the market overview and attribute tables on
     % www.bonds.is/market-overview
@@ -36,7 +36,7 @@ end
 
 % CREATING A PORTFOLIO OF NONINDEXED BONDS
 for i = 1:length(NonIndexedBonds)
-    url = "http://www.bonds.is/api/market/LoadIndexedDetail?orderbookId=" + NonIndexedBonds(i).orderbookId + "&lang=en";
+    url = "http://www.lanamal.is/api/market/LoadIndexedDetail?orderbookId=" + NonIndexedBonds(i).orderbookId + "&lang=en";
     % Creating a bond object (see bond.m) to sort relevant information from
     % the market overview and attribute tables on
     % www.bonds.is/market-overview
